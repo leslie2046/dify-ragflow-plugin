@@ -1,0 +1,114 @@
+identity:
+  name: retrieve
+  author: leslie2046
+  label:
+    en_US: Retrieve chunks
+    zh_Hans: 检索块
+description:
+  human:
+    en_US: Retrieve relevant chunks from RAGFlow based on a query.
+    zh_Hans: 根据查询从 RAGFlow 检索相关块。
+  llm: Retrieve relevant chunks from RAGFlow based on a query.
+parameters:
+  - name: question
+    form: llm
+    human_description:
+      en_US: The user query or query keywords.
+      zh_Hans: 用户查询或查询关键词。
+    label:
+      en_US: Query
+      zh_Hans: 查询语句
+    llm_description: The user query or query keywords.
+    required: true
+    type: string
+  - name: dataset_ids
+    form: form
+    human_description:
+      en_US: The IDs of the datasets to search, separated by commas.
+      zh_Hans: 要搜索的数据集 ID，多个 ID 用英文逗号分隔。
+    label:
+      en_US: Dataset IDs
+      zh_Hans: 数据集 IDs
+    llm_description: The IDs of the datasets to search, separated by commas.
+    required: true
+    type: string
+  - name: similarity_threshold
+    form: form
+    human_description:
+      en_US: The minimum similarity score. Defaults to 0.2.
+      zh_Hans: 最小相似度得分。默认为 0.2。
+    label:
+      en_US: Similarity Threshold
+      zh_Hans: 相似度阈值
+    llm_description: The minimum similarity score. Defaults to 0.2.
+    required: false
+    default: 0.2
+    min: 0
+    max: 1
+    type: number
+  - name: vector_similarity_weight
+    form: form
+    human_description:
+      en_US: The weight of vector cosine similarity. Defaults to 0.3.
+      zh_Hans: 向量余弦相似度的权重。默认为 0.3。
+    label:
+      en_US: Vector Similarity Weight
+      zh_Hans: 向量相似度权重
+    llm_description: The weight of vector cosine similarity. Defaults to 0.3.
+    required: false
+    default: 0.3
+    min: 0
+    max: 1
+    type: number
+  - name: top_k
+    form: form
+    human_description:
+      en_US: The number of chunks to retrieve. Defaults to 5.
+      zh_Hans: 检索的块数量。默认为 5。
+    label:
+      en_US: Top K
+      zh_Hans: Top K
+    llm_description: The number of chunks to retrieve. Defaults to 5.
+    required: false
+    default: 5
+    min: 1
+    max: 100
+    type: number
+  - name: rerank_id
+    form: form
+    human_description:
+      en_US: The ID of the rerank model.
+      zh_Hans: 重排模型的 ID。
+    label:
+      en_US: Rerank Model ID
+      zh_Hans: 重排模型 ID
+    llm_description: The ID of the rerank model.
+    required: false
+    type: string
+  - name: keyword
+    form: form
+    human_description:
+      en_US: Indicates whether to enable keyword-based matching.
+      zh_Hans: 是否启用基于关键词的匹配。
+    label:
+      en_US: Keyword Matching
+      zh_Hans: 关键词匹配
+    llm_description: Indicates whether to enable keyword-based matching.
+    required: false
+    default: false
+    type: boolean
+  - name: use_kg
+    form: form
+    human_description:
+      en_US: Whether to include knowledge graph related chunks.
+      zh_Hans: 是否包含知识图谱相关的块。
+    label:
+      en_US: Use Knowledge Graph
+      zh_Hans: 启用知识图谱
+    llm_description: Whether to include knowledge graph related chunks.
+    required: false
+    default: false
+    type: boolean
+extra:
+  python:
+    source: tools/retrieve.py

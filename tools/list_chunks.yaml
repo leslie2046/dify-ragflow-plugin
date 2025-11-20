@@ -1,0 +1,75 @@
+identity:
+  name: list_chunks
+  author: leslie2046
+  label:
+    en_US: List chunks
+    zh_Hans: 列出块
+description:
+  human:
+    en_US: List chunks of a document.
+    zh_Hans: 列出文档中的块。
+  llm: List chunks of a document.
+parameters:
+  - name: dataset_id
+    form: form
+    human_description:
+      en_US: The ID of the dataset.
+      zh_Hans: 数据集 ID
+    label:
+      en_US: Dataset ID
+      zh_Hans: 数据集 ID
+    llm_description: The ID of the dataset.
+    required: true
+    type: string
+  - name: document_id
+    form: form
+    human_description:
+      en_US: The ID of the document.
+      zh_Hans: 文档 ID
+    label:
+      en_US: Document ID
+      zh_Hans: 文档 ID
+    llm_description: The ID of the document.
+    required: true
+    type: string
+  - name: page
+    form: form
+    human_description:
+      en_US: Page number for pagination. Defaults to 1.
+      zh_Hans: 分页页码。默认为 1。
+    label:
+      en_US: Page
+      zh_Hans: 页码
+    llm_description: Page number for pagination. Defaults to 1.
+    required: false
+    default: 1
+    min: 1
+    type: number
+  - name: page_size
+    form: form
+    human_description:
+      en_US: Number of items per page. Defaults to 30.
+      zh_Hans: 每页显示的条目数。默认为 30。
+    label:
+      en_US: Page Size
+      zh_Hans: 每页大小
+    llm_description: Number of items per page. Defaults to 30.
+    required: false
+    default: 30
+    min: 1
+    max: 1000
+    type: number
+  - name: keywords
+    form: form
+    human_description:
+      en_US: Keywords to filter chunks.
+      zh_Hans: 用于过滤块的关键词。
+    label:
+      en_US: Keywords
+      zh_Hans: 关键词
+    llm_description: Keywords to filter chunks.
+    required: false
+    type: string
+extra:
+  python:
+    source: tools/list_chunks.py

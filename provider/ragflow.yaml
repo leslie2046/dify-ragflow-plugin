@@ -1,0 +1,41 @@
+credentials_for_provider:
+  base_url:
+    label:
+      en_US: Base URL
+    placeholder:
+      en_US: Please input your RAGFlow API Base URL
+      zh_Hans: 请输入你的RAGFlow API Base URL
+    required: true
+    type: text-input
+  api_key:
+    help:
+      en_US: API Key
+      zh_Hans: API 密钥
+    label:
+      en_US: Please input your RAGFlow API Key
+      zh_Hans: 请输入你的RAGFlow API 密钥
+    placeholder:
+      en_US: Please input your RAGFlow API Key
+      zh_Hans: 请输入你的RAGFlow API 密钥
+    required: true
+    type: secret-input
+identity:
+  author: leslie2046
+  name: ragflow
+  label:
+    en_US: RAGFlow
+    ja_JP: RAGFlow
+    zh_Hans: RAGFlow
+  description:
+    en_US: RAGFlow toolbox, used for dataset, document, and chunk management.
+    zh_Hans: RAGFlow 工具箱，用于数据集、文档、块管理。
+  icon: icon.svg
+tools:
+  - tools/retrieve.yaml
+  - tools/list_datasets.yaml
+  - tools/list_chunks.yaml
+  - tools/list_documents.yaml
+
+extra:
+  python:
+    source: provider/ragflow.py

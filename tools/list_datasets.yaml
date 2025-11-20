@@ -1,0 +1,42 @@
+identity:
+  name: list_datasets
+  author: leslie2046
+  label:
+    en_US: Lists datasets.
+    zh_Hans: 列出数据集
+description:
+  human:
+    en_US: List available datasets.
+    zh_Hans: 列出可用的数据集。
+  llm: List available datasets.
+parameters:
+  - name: page
+    form: form
+    human_description:
+      en_US: Page number for pagination. Defaults to 1.
+      zh_Hans: 分页页码。默认为 1。
+    label:
+      en_US: Page
+      zh_Hans: 页码
+    llm_description: Page number for pagination. Defaults to 1.
+    required: false
+    default: 1
+    min: 1
+    type: number
+  - name: page_size
+    form: form
+    human_description:
+      en_US: Number of items per page. Defaults to 30.
+      zh_Hans: 每页显示的条目数。默认为 30。
+    label:
+      en_US: Page Size
+      zh_Hans: 每页大小
+    llm_description: Number of items per page. Defaults to 30.
+    required: false
+    default: 30
+    min: 1
+    max: 1000
+    type: number
+extra:
+  python:
+    source: tools/list_datasets.py
