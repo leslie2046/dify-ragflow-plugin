@@ -72,7 +72,7 @@ parameters:
     required: false
     default: 5
     min: 1
-    max: 100
+    max: 10
     type: number
   - name: rerank_id
     form: form
@@ -84,7 +84,16 @@ parameters:
       zh_Hans: 重排模型 ID
     llm_description: The ID of the rerank model.
     required: false
-    type: string
+    type: select
+    options:
+    - label:
+        en_US: bge-reranker-large
+        zh_Hans: bge-reranker-large
+      value: bge-reranker-large
+    - label:
+        en_US: BAAI/bge-reranker-v2-m3
+        zh_Hans: BAAI/bge-reranker-v2-m3
+      value: BAAI/bge-reranker-v2-m3
   - name: keyword
     form: form
     human_description:

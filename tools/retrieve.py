@@ -28,6 +28,8 @@ class RagflowRetrieveTool(Tool):
             "similarity_threshold": similarity_threshold,
             "vector_similarity_weight": vector_similarity_weight,
             "top_k": top_k,
+            "page":1,
+            "page_size":top_k,
             "rerank_id": rerank_id,
             "keyword": keyword,
             "use_kg": use_kg
@@ -50,7 +52,7 @@ class RagflowRetrieveTool(Tool):
                     },
                     "score": chunk.get("similarity", 0.0),
                     "title": title,
-                    "content": chunk.get("content_with_weight", "")
+                    "content": chunk.get("content_with_weight", "") or chunk.get("content", ""),
                 }
                 records.append(record)
             yield self.create_json_message({"result": records})
