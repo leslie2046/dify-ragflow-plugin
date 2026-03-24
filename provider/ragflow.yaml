@@ -27,14 +27,25 @@ identity:
     ja_JP: RAGFlow
     zh_Hans: RAGFlow
   description:
-    en_US: RAGFlow toolbox, used for dataset, document, and chunk management.
-    zh_Hans: RAGFlow 工具箱，用于数据集、文档、块管理。
+    en_US: RAGFlow toolbox, used for dataset, document, chunk, and memory management.
+    zh_Hans: RAGFlow 工具箱，用于数据集、文档、块和记忆管理。
   icon: icon.svg
 tools:
   - tools/retrieve.yaml
   - tools/list_datasets.yaml
   - tools/list_chunks.yaml
   - tools/list_documents.yaml
+  - tools/list_memory.yaml
+  - tools/create_memory.yaml
+  - tools/update_memory.yaml
+  - tools/delete_memory.yaml
+  - tools/add_message.yaml
+  - tools/search_message.yaml
+  - tools/get_recent_messages.yaml
+  - tools/list_memory_messages.yaml
+  - tools/get_message_content.yaml
+  - tools/update_message_status.yaml
+  - tools/forget_message.yaml
 
 extra:
   python:

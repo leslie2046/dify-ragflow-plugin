@@ -1,0 +1,81 @@
+identity:
+  name: add_message
+  author: leslie2046
+  label:
+    en_US: Add message
+    zh_Hans: 添加消息
+description:
+  human:
+    en_US: Add a user/agent message pair to one or more memories.
+    zh_Hans: 向一个或多个记忆添加一组用户/助手消息。
+  llm: Add a user/agent message pair to one or more memories.
+parameters:
+  - name: memory_id
+    form: form
+    human_description:
+      en_US: Memory IDs, separated by commas.
+      zh_Hans: 记忆 ID，多个值用英文逗号分隔。
+    label:
+      en_US: Memory IDs
+      zh_Hans: 记忆 IDs
+    llm_description: Memory IDs, separated by commas.
+    required: true
+    type: string
+  - name: agent_id
+    form: form
+    human_description:
+      en_US: Agent ID associated with the message.
+      zh_Hans: 与消息关联的 Agent ID。
+    label:
+      en_US: Agent ID
+      zh_Hans: Agent ID
+    llm_description: Agent ID associated with the message.
+    required: true
+    type: string
+  - name: session_id
+    form: form
+    human_description:
+      en_US: Session ID associated with the message.
+      zh_Hans: 与消息关联的会话 ID。
+    label:
+      en_US: Session ID
+      zh_Hans: 会话 ID
+    llm_description: Session ID associated with the message.
+    required: true
+    type: string
+  - name: user_input
+    form: llm
+    human_description:
+      en_US: The user input text.
+      zh_Hans: 用户输入文本。
+    label:
+      en_US: User Input
+      zh_Hans: 用户输入
+    llm_description: The user input text.
+    required: true
+    type: string
+  - name: agent_response
+    form: llm
+    human_description:
+      en_US: The agent response text.
+      zh_Hans: 助手回复文本。
+    label:
+      en_US: Agent Response
+      zh_Hans: 助手回复
+    llm_description: The agent response text.
+    required: true
+    type: string
+  - name: user_id
+    form: form
+    human_description:
+      en_US: Optional user ID.
+      zh_Hans: 可选的用户 ID。
+    label:
+      en_US: User ID
+      zh_Hans: 用户 ID
+    llm_description: Optional user ID.
+    required: false
+    type: string
+extra:
+  python:
+    source: tools/add_message.py

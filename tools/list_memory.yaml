@@ -1,0 +1,86 @@
+identity:
+  name: list_memory
+  author: leslie2046
+  label:
+    en_US: List memories
+    zh_Hans: 列出记忆
+description:
+  human:
+    en_US: List memories in RAGFlow.
+    zh_Hans: 列出 RAGFlow 中的记忆。
+  llm: List memories in RAGFlow.
+parameters:
+  - name: page
+    form: form
+    human_description:
+      en_US: Page number for pagination. Defaults to 1.
+      zh_Hans: 分页页码。默认为 1。
+    label:
+      en_US: Page
+      zh_Hans: 页码
+    llm_description: Page number for pagination. Defaults to 1.
+    required: false
+    default: 1
+    min: 1
+    type: number
+  - name: page_size
+    form: form
+    human_description:
+      en_US: Number of items per page. Defaults to 50.
+      zh_Hans: 每页显示的条目数。默认为 50。
+    label:
+      en_US: Page Size
+      zh_Hans: 每页大小
+    llm_description: Number of items per page. Defaults to 50.
+    required: false
+    default: 50
+    min: 1
+    max: 1000
+    type: number
+  - name: tenant_id
+    form: form
+    human_description:
+      en_US: Tenant IDs to filter, separated by commas.
+      zh_Hans: 要过滤的租户 ID，多个值用英文逗号分隔。
+    label:
+      en_US: Tenant IDs
+      zh_Hans: 租户 ID
+    llm_description: Tenant IDs to filter, separated by commas.
+    required: false
+    type: string
+  - name: memory_type
+    form: form
+    human_description:
+      en_US: Memory types to filter, separated by commas.
+      zh_Hans: 要过滤的记忆类型，多个值用英文逗号分隔。
+    label:
+      en_US: Memory Types
+      zh_Hans: 记忆类型
+    llm_description: Memory types to filter, separated by commas.
+    required: false
+    type: string
+  - name: storage_type
+    form: form
+    human_description:
+      en_US: Storage type to filter.
+      zh_Hans: 要过滤的存储类型。
+    label:
+      en_US: Storage Type
+      zh_Hans: 存储类型
+    llm_description: Storage type to filter.
+    required: false
+    type: string
+  - name: keywords
+    form: form
+    human_description:
+      en_US: Keywords to filter memories.
+      zh_Hans: 用于过滤记忆的关键词。
+    label:
+      en_US: Keywords
+      zh_Hans: 关键词
+    llm_description: Keywords to filter memories.
+    required: false
+    type: string
+extra:
+  python:
+    source: tools/list_memory.py

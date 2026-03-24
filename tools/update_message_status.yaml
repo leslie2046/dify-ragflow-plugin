@@ -1,0 +1,48 @@
+identity:
+  name: update_message_status
+  author: leslie2046
+  label:
+    en_US: Update message status
+    zh_Hans: 更新消息状态
+description:
+  human:
+    en_US: Enable or disable a specific message in a memory.
+    zh_Hans: 启用或禁用某个记忆中的特定消息。
+  llm: Enable or disable a specific message in a memory.
+parameters:
+  - name: memory_id
+    form: form
+    human_description:
+      en_US: The ID of the memory.
+      zh_Hans: 记忆 ID。
+    label:
+      en_US: Memory ID
+      zh_Hans: 记忆 ID
+    llm_description: The ID of the memory.
+    required: true
+    type: string
+  - name: message_id
+    form: form
+    human_description:
+      en_US: The numeric message ID.
+      zh_Hans: 数字类型的消息 ID。
+    label:
+      en_US: Message ID
+      zh_Hans: 消息 ID
+    llm_description: The numeric message ID.
+    required: true
+    type: number
+  - name: status
+    form: form
+    human_description:
+      en_US: The enabled status to set.
+      zh_Hans: 要设置的启用状态。
+    label:
+      en_US: Status
+      zh_Hans: 状态
+    llm_description: The enabled status to set.
+    required: true
+    type: boolean
+extra:
+  python:
+    source: tools/update_message_status.py

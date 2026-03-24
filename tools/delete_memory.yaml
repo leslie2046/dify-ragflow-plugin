@@ -1,0 +1,26 @@
+identity:
+  name: delete_memory
+  author: leslie2046
+  label:
+    en_US: Delete memory
+    zh_Hans: 删除记忆
+description:
+  human:
+    en_US: Delete a memory in RAGFlow.
+    zh_Hans: 删除 RAGFlow 中的记忆。
+  llm: Delete a memory in RAGFlow.
+parameters:
+  - name: memory_id
+    form: form
+    human_description:
+      en_US: The ID of the memory.
+      zh_Hans: 记忆 ID。
+    label:
+      en_US: Memory ID
+      zh_Hans: 记忆 ID
+    llm_description: The ID of the memory.
+    required: true
+    type: string
+extra:
+  python:
+    source: tools/delete_memory.py

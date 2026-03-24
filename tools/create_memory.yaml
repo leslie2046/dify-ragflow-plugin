@@ -1,0 +1,59 @@
+identity:
+  name: create_memory
+  author: leslie2046
+  label:
+    en_US: Create memory
+    zh_Hans: 创建记忆
+description:
+  human:
+    en_US: Create a memory in RAGFlow.
+    zh_Hans: 在 RAGFlow 中创建记忆。
+  llm: Create a memory in RAGFlow.
+parameters:
+  - name: name
+    form: form
+    human_description:
+      en_US: The memory name.
+      zh_Hans: 记忆名称。
+    label:
+      en_US: Name
+      zh_Hans: 名称
+    llm_description: The memory name.
+    required: true
+    type: string
+  - name: memory_type
+    form: form
+    human_description:
+      en_US: 'Memory types, separated by commas. Example: raw,semantic.'
+      zh_Hans: 记忆类型，多个值用英文逗号分隔，例如 raw,semantic。
+    label:
+      en_US: Memory Types
+      zh_Hans: 记忆类型
+    llm_description: Memory types, separated by commas.
+    required: true
+    type: string
+  - name: embd_id
+    form: form
+    human_description:
+      en_US: Embedding model ID.
+      zh_Hans: Embedding 模型 ID。
+    label:
+      en_US: Embedding Model ID
+      zh_Hans: Embedding 模型 ID
+    llm_description: Embedding model ID.
+    required: true
+    type: string
+  - name: llm_id
+    form: form
+    human_description:
+      en_US: LLM model ID.
+      zh_Hans: LLM 模型 ID。
+    label:
+      en_US: LLM Model ID
+      zh_Hans: LLM 模型 ID
+    llm_description: LLM model ID.
+    required: true
+    type: string
+extra:
+  python:
+    source: tools/create_memory.py

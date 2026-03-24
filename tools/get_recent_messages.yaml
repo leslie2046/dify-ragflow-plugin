@@ -1,0 +1,62 @@
+identity:
+  name: get_recent_messages
+  author: leslie2046
+  label:
+    en_US: Get recent messages
+    zh_Hans: 获取最近消息
+description:
+  human:
+    en_US: Get recent messages from one or more memories.
+    zh_Hans: 获取一个或多个记忆中的最近消息。
+  llm: Get recent messages from one or more memories.
+parameters:
+  - name: memory_id
+    form: form
+    human_description:
+      en_US: Memory IDs, separated by commas.
+      zh_Hans: 记忆 ID，多个值用英文逗号分隔。
+    label:
+      en_US: Memory IDs
+      zh_Hans: 记忆 IDs
+    llm_description: Memory IDs, separated by commas.
+    required: true
+    type: string
+  - name: agent_id
+    form: form
+    human_description:
+      en_US: Optional agent ID filter.
+      zh_Hans: 可选的 Agent ID 过滤条件。
+    label:
+      en_US: Agent ID
+      zh_Hans: Agent ID
+    llm_description: Optional agent ID filter.
+    required: false
+    type: string
+  - name: session_id
+    form: form
+    human_description:
+      en_US: Optional session ID filter.
+      zh_Hans: 可选的会话 ID 过滤条件。
+    label:
+      en_US: Session ID
+      zh_Hans: 会话 ID
+    llm_description: Optional session ID filter.
+    required: false
+    type: string
+  - name: limit
+    form: form
+    human_description:
+      en_US: Number of recent messages to return. Defaults to 10.
+      zh_Hans: 返回的最近消息数量。默认为 10。
+    label:
+      en_US: Limit
+      zh_Hans: 数量上限
+    llm_description: Number of recent messages to return. Defaults to 10.
+    required: false
+    default: 10
+    min: 1
+    max: 1000
+    type: number
+extra:
+  python:
+    source: tools/get_recent_messages.py

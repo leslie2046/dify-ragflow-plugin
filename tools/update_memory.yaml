@@ -1,0 +1,37 @@
+identity:
+  name: update_memory
+  author: leslie2046
+  label:
+    en_US: Update memory
+    zh_Hans: 更新记忆
+description:
+  human:
+    en_US: Update a memory using a JSON object payload.
+    zh_Hans: 使用 JSON 对象载荷更新记忆。
+  llm: Update a memory using a JSON object payload.
+parameters:
+  - name: memory_id
+    form: form
+    human_description:
+      en_US: The ID of the memory.
+      zh_Hans: 记忆 ID。
+    label:
+      en_US: Memory ID
+      zh_Hans: 记忆 ID
+    llm_description: The ID of the memory.
+    required: true
+    type: string
+  - name: update_json
+    form: llm
+    human_description:
+      en_US: JSON object describing the memory fields to update.
+      zh_Hans: 描述要更新记忆字段的 JSON 对象。
+    label:
+      en_US: Update JSON
+      zh_Hans: 更新 JSON
+    llm_description: JSON object describing the memory fields to update.
+    required: true
+    type: string
+extra:
+  python:
+    source: tools/update_memory.py

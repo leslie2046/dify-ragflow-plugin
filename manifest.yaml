@@ -1,4 +1,4 @@
-version: 0.0.2
+version: 0.0.3
 type: plugin
 author: leslie2046
 name: ragflow
@@ -7,8 +7,8 @@ label:
   ja_JP: RAGFlow
   zh_Hans: RAGFlow
 description:
-  en_US: RAGFlow toolbox, used for dataset, document, and chunk management.
-  zh_Hans: RAGFlow 工具箱，用于数据集、文档、块管理。
+  en_US: RAGFlow toolbox for dataset, document, chunk, retrieval, and memory management.
+  zh_Hans: RAGFlow 工具箱，用于数据集、文档、块、检索和记忆管理。
 icon: icon.svg
 resource:
   memory: 268435456

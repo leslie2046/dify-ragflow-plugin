@@ -1,0 +1,37 @@
+identity:
+  name: get_message_content
+  author: leslie2046
+  label:
+    en_US: Get message content
+    zh_Hans: 获取消息内容
+description:
+  human:
+    en_US: Get the content for a specific message in a memory.
+    zh_Hans: 获取某个记忆中特定消息的内容。
+  llm: Get the content for a specific message in a memory.
+parameters:
+  - name: memory_id
+    form: form
+    human_description:
+      en_US: The ID of the memory.
+      zh_Hans: 记忆 ID。
+    label:
+      en_US: Memory ID
+      zh_Hans: 记忆 ID
+    llm_description: The ID of the memory.
+    required: true
+    type: string
+  - name: message_id
+    form: form
+    human_description:
+      en_US: The numeric message ID.
+      zh_Hans: 数字类型的消息 ID。
+    label:
+      en_US: Message ID
+      zh_Hans: 消息 ID
+    llm_description: The numeric message ID.
+    required: true
+    type: number
+extra:
+  python:
+    source: tools/get_message_content.py

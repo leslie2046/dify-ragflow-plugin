@@ -1,0 +1,75 @@
+identity:
+  name: list_memory_messages
+  author: leslie2046
+  label:
+    en_US: List memory messages
+    zh_Hans: 列出记忆消息
+description:
+  human:
+    en_US: List messages belonging to a memory.
+    zh_Hans: 列出某个记忆中的消息。
+  llm: List messages belonging to a memory.
+parameters:
+  - name: memory_id
+    form: form
+    human_description:
+      en_US: The ID of the memory.
+      zh_Hans: 记忆 ID。
+    label:
+      en_US: Memory ID
+      zh_Hans: 记忆 ID
+    llm_description: The ID of the memory.
+    required: true
+    type: string
+  - name: agent_id
+    form: form
+    human_description:
+      en_US: Optional agent IDs, separated by commas.
+      zh_Hans: 可选的 Agent ID，多个值用英文逗号分隔。
+    label:
+      en_US: Agent IDs
+      zh_Hans: Agent IDs
+    llm_description: Optional agent IDs, separated by commas.
+    required: false
+    type: string
+  - name: keywords
+    form: form
+    human_description:
+      en_US: Keywords to filter messages.
+      zh_Hans: 用于过滤消息的关键词。
+    label:
+      en_US: Keywords
+      zh_Hans: 关键词
+    llm_description: Keywords to filter messages.
+    required: false
+    type: string
+  - name: page
+    form: form
+    human_description:
+      en_US: Page number for pagination. Defaults to 1.
+      zh_Hans: 分页页码。默认为 1。
+    label:
+      en_US: Page
+      zh_Hans: 页码
+    llm_description: Page number for pagination. Defaults to 1.
+    required: false
+    default: 1
+    min: 1
+    type: number
+  - name: page_size
+    form: form
+    human_description:
+      en_US: Number of items per page. Defaults to 50.
+      zh_Hans: 每页显示的条目数。默认为 50。
+    label:
+      en_US: Page Size
+      zh_Hans: 每页大小
+    llm_description: Number of items per page. Defaults to 50.
+    required: false
+    default: 50
+    min: 1
+    max: 1000
+    type: number
+extra:
+  python:
+    source: tools/list_memory_messages.py
